@@ -1,51 +1,46 @@
+import {React, useEffect} from 'react';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle'
 import './App.css';
-import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
-import {useState,useEffect} from 'react';
-import Register from "./Register";
-import UserContext from "./UserContext";
+import { useGlobalContext } from './context';
 import axios from "axios";
-import Login from "./Login";
+import Navbar from './navigation/Navbar'
+import Sidebar from './navigation/Sidebar'
+import Signup from './pages/Signup'
+import Login from "./pages/Login";
 import Home from "./Home";
+import Analytics from './pages/Analytics';
+import Categories from './pages/Categories';
+import CreatTodo from './pages/CreatTodo'
 
 function App() {
-  const [email,setEmail] = useState('');
-
+  const user = useGlobalContext();
+  
   useEffect(() => {
-    axios.get('http://localhost:4000/user', {withCredentials:true})
+    axios.get('http://obirijah-server.herokuapp.com/user', {withCredentials:true})
       .then(response => {
-        setEmail(response.data.email);
+        user.setEmail(response.data.email);
+        user.setUserImage(response.data.image);
       });
-  }, []);
-
-  function logout() {
-    axios.post('http://localhost:4000/logout', {}, {withCredentials:true})
-      .then(() => setEmail(''));
-  }
+  }, [user]);
 
   return (
-    <UserContext.Provider value={{email,setEmail}}>
+    <>
       <BrowserRouter>
-        <nav>
-          <Link to={'/'}>Home</Link>
-          {!email && (
-            <>
-              <Link to={'/login'}>Login</Link>
-              <Link to={'/register'}>Register</Link>
-            </>
-          )}
-          {!!email && (
-            <a onClick={e => {e.preventDefault();logout();}}>Logout</a>
-          )}
-        </nav>
-        <main>
+        <Navbar/>
+        <Sidebar/>
           <Switch>
+            
             <Route exact path={'/'} component={Home} />
-            <Route exact path={'/register'} component={Register} />
-            <Route exact path={'/login'} component={Login} />
+            <Route path={'/login'} component={Login} />
+            <Route path={'/signup'} component={Signup} />
+            <Route path={'/categories'} component={Categories} />
+            <Route path={'/analytics'} component={Analytics} />
+            <Route path={'/creattodo'} component={CreatTodo} />
           </Switch>
-        </main>
       </BrowserRouter>
-    </UserContext.Provider>
+    </>
   );
 }
 

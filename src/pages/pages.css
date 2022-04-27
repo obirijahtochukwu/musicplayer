@@ -1,0 +1,109 @@
+/* NEW TASKS */
+.new-task {
+ background-color: rgb(19, 0, 48);
+ border-radius: 10px;
+ transition: 0.4s;
+}
+
+textarea {
+ width: 100%;
+ color: white  !important;
+ background-color: transparent;
+ border: 0.1rem solid rgb(219, 39, 159) !important;
+ border-radius: 10px;
+ transition: all 0.3s ease-in-out;
+}
+textarea:focus {
+ box-shadow: 0 0 0 5px rgb(219, 39, 159, 0.5);
+ outline: none;
+}
+
+.new-task button {
+ color: rgb(19, 0, 48);
+ background-color: rgb(219, 39, 159) !important;
+ border: transparent;
+ border-radius: 8px;
+ font-weight: 700;
+ letter-spacing: 0.1rem;
+ transition: all 0.4s ease-in-out;
+}
+.new-task button:hover {
+ box-shadow: 0 0 0 5px rgb(219, 39, 159, 0.5);
+ outline: none;
+}
+
+/* CATEGORIES */
+.category {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.category-btn {
+ cursor: pointer;
+ text-transform: capitalize;
+ color: white;
+ transition: all 0.2s ease-in-out;
+ border-radius: 8px 8px 0 0;
+}
+.category-btn-active {
+ background-color: rgba(237, 234, 247, 0.1);
+}
+
+.category-tab {
+ background-color: rgba(237, 234, 247, 0.1);
+ border-radius: 15px;
+}
+
+.category-item {
+ display: block;
+ position: relative;
+ height: 100%;
+ color: white;
+ background-color: rgb(19, 0, 48);
+ border-radius: 8px;
+ transition: all 0.2s ease-in-out;
+}
+
+.date-badge {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ background-color: rgba(207, 9, 148, 0.911);
+ border-radius: 0 8px 0 8px;
+}
+
+/* LOGIN FORM */
+.login-form {
+ background-color: rgb(19, 0, 48);
+ border-radius: 8px;
+}
+
+.login-form > input{
+ color: white  !important;
+ background-color: transparent;
+ font-weight: bold;
+ border: 0.1rem solid rgb(219, 39, 159) !important;
+ border-radius: 8px;
+ transition: all 0.3s ease-in-out;
+}
+.login-form input:focus {
+ box-shadow: 0 0 0 5px rgb(219, 39, 159, 0.5);
+ outline: none;
+}
+ 
+.login-form > button {
+ text-transform: capitalize;
+ color: rgb(19, 0, 48);
+ background-color: rgb(219, 39, 159);
+ border: 0.1rem solid rgb(219, 39, 159) !important;
+ border-radius: 8px;
+ transition: all 0.3s ease-in-out;
+}
+
+.login-form > button:hover {
+ color: rgb(219, 39, 159);
+ background-color: unset;
+ box-shadow: 0 0 0 5px rgb(219, 39, 159, 0.5);
+ outline: none;
+}

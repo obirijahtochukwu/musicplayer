@@ -1,29 +1,181 @@
+.color_store{
+ color: rgb(78, 56, 114);
+background-color: rgb(19, 0, 48), rgb(86, 70, 145);
+ border-color: rgb(16, 3, 44), rgb(212, 49, 139);
+}
+html {
+ scroll-behavior: smooth;
+}
 body{
-  background-color: #f0f0f0;
+ font-family: sans-serif;
+ background-color: rgb(90, 73, 150);
+ display: block !important;
+ margin: 0;
 }
-nav{
-  text-align: center;
+.Link {
+ color: unset !important;
+ text-decoration: none !important;
 }
-nav a{
-  display: inline-block;
-  padding: 15px;
-  text-decoration: none;
-  color:#333;
+.text-bold {
+ font-weight: bold;
+}
+.partial-white{
+ color: rgb(182, 178, 178);
+}
+input:focus {
+ outline: none;
+}
+/* LOGIN AND SIGNUP */
+for {
+ display: block;
+ padding: 0.8rem;
+ padding-top: 2rem;
+ padding-bottom: 2rem;
+ background-color: rgb(16, 3, 44);
+ border-radius: 8px; 
+ box-shadow: 1px 10px 50px 6px rgb(0, 0, 0, 0.5);
+ border: 0.07rem solid palevioletred;
+}
+.input {
+ padding: 0.3rem;
+ border: 0.1rem solid rgb(182, 178, 178);
+ border-radius: 6px;
+ transition: all 0.2s ease-in-out;
+}
+.input:focus{
+ border-color: rgb(19, 0, 48);
+ box-shadow: 0.2px 0.2px 2px 1px rgb(19, 0, 48);
+}
+for button{
+ text-transform: capitalize;
+ padding: 0.4rem;
+ margin-top: 1.5rem;
+ color: rgb(212, 49, 139);
+ background-color: rgb(19, 0, 48);
+ border: 0.1rem solid rgb(16, 3, 44);
+ border-radius: 6px;
+ transition: all 0.5s ease-in-out;
+}
+form button:hover {
+ color: rgb(16, 3, 44);
+ background-color: white;
 }
 
-main{
-  width: 240px;
-  margin: 10px auto;
-  text-align: center;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0,0,0,.1);
+/* TASKS */
+.name {
+ overflow: hidden;
+ white-space: nowrap;
+ margin: 0;
+ border-right: 0.2rem solid rgb(90, 73, 150);
+ animation: typing 3.5s steps(40, end) infinite, cursor-blink 0.75s  infinite;
+}
+@keyframes typing {
+ from {
+  width: 0;
+ }
+ to {
+  width: 100%;
+ }
+}
+@keyframes cursor-blink{
+ 0% {
+  border-color: transparent;
+ }
+ 50% {
+  border-color: rgb(90, 73, 150);
+ }
 }
 
-ul{
-  padding-left:0;
+.todo-list {
+ display: block;
+ position: relative;
+ height: 100%;
+ color: white;
+ background-color: rgb(19, 0, 48);
+ border-radius: 8px;
+ transition: all 0.2s ease-in-out;
 }
-ul li{
-  display: block;
+
+.form-check-input {
+ padding: 0.5rem !important;
+ background-color: transparent;
+ border: 0.2rem solid
+  rgb(212, 49, 139) !important;
+ transition: all 0.3s ease-in-out;
+}
+
+.text {
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ font-size: large;
+ font-family: sans-serif;
+}
+.text-done {
+ text-decoration: line-through;
+}
+
+.delete-box {
+ color: rgb(243, 8, 137);
+ font-size: 1.4rem;
+ cursor: pointer;
+}
+
+.date-badge {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ background-color: rgba(207, 9, 148, 0.911);
+ border-radius: 0 8px 0 8px;
+}
+
+/* UNDUE-TODO */  
+.undue-todo {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 90vh;
+ width: 100%;
+ color: rgb(148, 125, 125);
+ letter-spacing: 0.1rem;
+ transition: 0.5s;
+}
+
+.user-profile {
+ height: 60%;
+ width: 80%;
+ padding: 0.3rem;
+ border: 0.4rem;
+ border-style: solid;
+ border-color: rgb(16, 3, 44) transparent;
+ border-radius: 50%;
+}
+
+
+/* COMPLETED */
+.completed-wrapper {
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ height: 90%;
+}
+.time {
+ color: white;
+ font-size: x-large;
+}
+.completed {
+ background-color: rgba(237, 234, 247, 0.1);
+ overflow-y: auto;
+ height: 76vh;
+ transition: all 0.5s ease-in;
+ border-radius: 16px 0 0 0;
+}
+.date {
+ position: absolute;
+ top: 0;
+ right: 0;
+ background-color: rgb(86, 70, 145);
+ font-size: small;
+ font-family: sans-serif;
+ border-radius: 0 9px 0 8px ;
 }
