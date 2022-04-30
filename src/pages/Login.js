@@ -26,7 +26,7 @@ function Login() {
         setRedirect(true);
       })
       .catch((err) => {
-        console.log(err)
+        alert(err)
         setLoginError(true);
       });
   }
@@ -43,7 +43,7 @@ function Login() {
             <form action="" onSubmit={e => loginUser(e)} className='login-form px-4'>
               <h5 className="text-center text-bold text-white py-4">Login</h5>
               {loginError && (
-                <div>LOGIN ERROR! WRONG EMAIL OR PASSWORD!</div>
+                <div className='text-danger badge badge-warning'>LOGIN ERROR! WRONG EMAIL OR PASSWORD!</div>
               )}
               <p className="text-bold mt-2 mb-2 text-white">Email:</p>
               <input required autoFocus type="email" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)} className='w-100 p-3 text-bold'/><br />
