@@ -1,0 +1,24 @@
+:root {
+ --primary: #146DE4;
+}
+
+.cursor {
+ cursor: pointer;
+}
+
+.mobile-navbar {
+ top: 0;
+ z-index: 1;
+ position: sticky;
+ width: 100%;
+ background-color: var(--primary);
+ border-radius: 0 0 25px 0;
+}
+
+.bottom-bar {
+ z-index: 1;
+ position: fixed;
+ bottom: 0 !important;
+ width: 100%;
+ background-color: white;
+}

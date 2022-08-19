@@ -1,0 +1,31 @@
+* {
+ box-sizing: border-box;
+}
+
+/* CONTENT */
+.activity-card {
+ cursor: pointer;
+ background-color: white;
+ border-radius: 25px;
+ box-shadow: 0 0 15px 2px #e7e7e7;
+ transition: all 0.5s ease-in-out;
+}
+.activity-card:hover {
+ transform: scale(1.05);
+}
+
+.activity-card img{
+ border-radius: 25px;
+}
+
+/* NEWS LIST */
+.news-card {
+ cursor: pointer;
+ background-color: white;
+ border-radius: 25px;
+ box-shadow: 0 0 15px 2px #e7e7e7;
+ transition: all 0.5s ease-in-out;
+}
+.news-card:hover {
+ transform: scale(1.05);
+}
